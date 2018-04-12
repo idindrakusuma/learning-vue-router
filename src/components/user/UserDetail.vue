@@ -32,7 +32,7 @@
       if (true){
         next();
       } else {
-        console.log("you don't have an access for this route..");
+        // you don't have an access
         next(false);
       }
     }
