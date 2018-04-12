@@ -5,7 +5,28 @@
       <p>Hello User {{ $route.params.id }}</p>
       <router-link
         tag="button"
-        class="btn btn-primary"
-        :to="{ name: 'userEdit', params: { id: $route.params.id }, query: { locale: 'en', num: 100 } }">Edit User</router-link>
+        class="btn btn-warning"
+        :to="link">Edit User</router-link>
+      <hr>
     </div>
 </template>
+
+<script>
+  export default {
+    data() {
+      return{
+         link: {
+           name: 'userEdit',
+           params: {
+             id: this.$route.params.id
+           },
+           query: {
+             locale: 'en',
+             num: 100,
+           },
+           hash: '#data'
+         }
+      }
+    }
+  }
+</script>
