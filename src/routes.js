@@ -19,5 +19,9 @@ export const routes = [
       { path: '', component: UserStart },
       { path: ':id', component: UserDetail, name: 'userDetail'},
       { path: ':id/edit', component: UserEdit, name: 'userEdit'}
-    ]}
+    ]},
+  // redirect path to specific path
+  { path: '/redirect-me', redirect: { name: 'home' } },
+  // this for make redirect if the route not found
+  { path: '*', redirect: '/' },
 ];
