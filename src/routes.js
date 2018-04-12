@@ -1,10 +1,30 @@
 // import component will show
-import User from './components/user/User'
-import UserStart from './components/user/UserStart'
-import UserDetail from './components/user/UserDetail'
-import UserEdit from './components/user/UserEdit'
 import Home from './components/Home'
 import Header from './components/Header'
+
+// make it lightweight
+// this model import well generate if this component needed
+const User = resolve => {
+  require.ensure(['./components/user/User'], () =>{
+    resolve(require('./components/user/User'))
+  }, 'user')
+};
+const UserEdit = resolve => {
+  require.ensure(['./components/user/UserEdit'], () =>{
+    resolve(require('./components/user/UserEdit'))
+  }, 'user')
+};
+const UserStart = resolve => {
+  require.ensure(['./components/user/UserStart'], () =>{
+    resolve(require('./components/user/UserStart'))
+  }, 'user')
+};
+const UserDetail = resolve => {
+  require.ensure(['./components/user/UserDetail'], () =>{
+    resolve(require('./components/user/UserDetail'))
+  }, 'user')
+};
+
 
 // then, export routes and set the path and component
 export const routes = [
