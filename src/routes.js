@@ -17,7 +17,10 @@ export const routes = [
       'header-bottom': Header
     }, children: [
       { path: '', component: UserStart },
-      { path: ':id', component: UserDetail, name: 'userDetail'},
+      { path: ':id', component: UserDetail, name: 'userDetail', beforeEnter: (to, from, next) =>{
+          console.log('inside route setup..');
+          next();
+         }},
       { path: ':id/edit', component: UserEdit, name: 'userEdit'}
     ]},
   // redirect path to specific path

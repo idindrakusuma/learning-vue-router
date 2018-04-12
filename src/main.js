@@ -18,6 +18,12 @@ const router = new VueRouter({
   }
 });
 
+//  make guard for route
+router.beforeEach((to, from, next) => {
+  console.log('global before each..');
+  next();
+});
+
 Vue.use(VueRouter)
 
 new Vue({

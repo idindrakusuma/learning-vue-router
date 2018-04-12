@@ -27,6 +27,14 @@
            hash: '#data'
          }
       }
+    },
+    beforeRouteEnter(to, from, next) {
+      if (true){
+        next();
+      } else {
+        console.log("you don't have an access for this route..");
+        next(false);
+      }
     }
   }
 </script>
